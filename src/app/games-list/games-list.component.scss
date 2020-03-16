@@ -1,0 +1,11 @@
+.games-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__card {
+    width: 262px;
+    height: 280px;
+    margin-bottom: 20px;
+  }
+}

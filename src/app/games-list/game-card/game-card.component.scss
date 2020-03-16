@@ -1,0 +1,54 @@
+@import 'abstracts/variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &__image {
+    background-color: $background-card;
+    border-radius: 3px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 180px;
+      margin: 22px;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+
+    &--name {
+      color: $card-title;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &--price {
+      color: $blue;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+    }    
+  }
+
+  &__buy {
+    margin-top: 20px;
+    color: $blue;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;    
+  }
+}
+
+.card:hover {
+  opacity: 0.7;
+  border-radius: 3px;
+}
