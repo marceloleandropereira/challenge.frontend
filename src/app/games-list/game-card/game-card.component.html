@@ -1,8 +1,9 @@
-<div class="card"
+<div *ngIf="game"
+     class="card"
      (mouseover)="mouseOver=true"
      (mouseout)="mouseOver=false">
   <div class="card__image">
-    <img src="assets/image/{{game.image}}" alt="{{game.name}}">
+    <img src="assets/image/{{game.image}}" alt="{{game.name}}" />
   </div>
 
   <div *ngIf="!mouseOver"
