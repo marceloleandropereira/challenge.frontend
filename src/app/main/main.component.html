@@ -1,0 +1,27 @@
+<div class="games-store">
+  <div class="games-list">
+    <div class="games-list__header">
+      <div class="games-list__header--title">
+        Games
+      </div>
+  
+      <div class="games-list__header--ordination">
+        <!-- TODO: CRIAR ENUM -->
+        <select>
+          <option value="highest-score">Mais populares</option>
+          <option value="lowest-price">Mais baratos</option>
+          <option value="alphabetical">Ordem alfabética</option>
+        </select>      
+      </div>
+    </div>
+
+    <div class="games-list__cards">
+      <app-games-list [listGames]="listGames">
+      </app-games-list>
+    </div>
+  </div>
+
+  <div class="cart">
+      carrinho
+  </div>
+</div>

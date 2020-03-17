@@ -7,14 +7,10 @@ registerLocaleData(localePt, 'pt-BR');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GamesListComponent } from './games-list/games-list.component';
-import { GameCardComponent } from './games-list/game-card/game-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GamesListComponent,
-    GameCardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

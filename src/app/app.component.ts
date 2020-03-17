@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import games from '../assets/mocks/products.json';
-import { Game } from './shared/game.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +7,4 @@ import { Game } from './shared/game.model';
 })
 
 export class AppComponent {
-  public listGames: Game[] = games;
 }
