@@ -6,11 +6,16 @@
       </div>
   
       <div class="games-list__header--ordination">
-        <!-- TODO: CRIAR ENUM -->
-        <select>
-          <option value="highest-score">Mais populares</option>
-          <option value="lowest-price">Mais baratos</option>
-          <option value="alphabetical">Ordem alfabética</option>
+        <select [formControl]="gameListOrder">
+          <option [value]="enumGameListOrder.HIGHEST_SCORE">
+            Mais populares
+          </option>
+          <option [value]="enumGameListOrder.LOWEST_PRICE">
+            Mais baratos
+          </option>
+          <option [value]="enumGameListOrder.ALPHABETICAL">
+            Ordem alfabética
+          </option>
         </select>      
       </div>
     </div>
