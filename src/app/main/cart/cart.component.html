@@ -1,0 +1,66 @@
+<div class="cart">
+  <div class="cart__title">
+    Carrinho
+    <span *ngIf="!emptyCart"
+          class="cart__title--total">
+      ({{ gamesToBuy.length }} {{ gamesToBuy.length > 1 ? 'itens' : 'item' }})
+    </span>
+  </div>
+
+  <div *ngIf="emptyCart"
+       class="cart__empty">
+    <img src="../assets/icon/cart-icon.svg" alt="Empty Cart" />
+    <div class="cart__empty--subtitle">
+      Até o momento, <br>o seu carrinho está vazio
+    </div>
+  </div>
+
+  <div *ngIf="!emptyCart"
+       class="cart__shop">
+
+    <div *ngFor="let game of gamesToBuy; let i = index;"
+         class="game-item">
+
+      <div class="game-item__image">
+        <img src="../assets/image/{{game.image}}" alt="{{game.name}}" />
+      </div>
+      <div class="game-item__info">
+        <div class="game-item__info--title">
+          {{ game.name }}
+        </div>
+        <div class="game-item__info--price">
+          {{ game.price | currency: 'BRL' }}
+        </div>
+      </div>
+      <div class="game-item__delete"
+           (click)="removeGame(i, game.price)">
+        <span>
+          x
+        </span>
+      </div>
+
+    </div>
+
+    <ng-container *ngTemplateOutlet="priceTemplate; context: { label: 'subtotal', cost: subtotal, subtotal: true }"></ng-container>
+    <ng-container *ngTemplateOutlet="priceTemplate; context: { label: 'frete', cost: delivery, subtotal: true }"></ng-container>
+    <ng-container *ngTemplateOutlet="priceTemplate; context: { label: 'total', cost: total, subtotal: false }"></ng-container>    
+
+  </div>  
+</div>
+
+<ng-template #priceTemplate
+             let-label="label"
+             let-cost="cost"
+             let-isSubtotal="subtotal">
+  <div class="cart__price">
+    <div class="cart__price--label">
+      {{ label }}
+    </div>
+    <div [ngClass]="{
+           'cart__price--sub-total': isSubtotal,
+           'cart__price--total': !isSubtotal
+          }">
+      {{ cost | currency: 'BRL' }}
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,146 @@
+@import 'abstracts/variables';
+
+.cart {
+  border: 1px solid $border-cart;
+  min-height: 285px;
+  margin-top: 13px;
+  border-radius: 3px;
+  padding: 20px 25px 20px 25px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 18px;
+    color: $black-title;
+    font-weight: bold;
+
+    &--total {
+      font-size: 14px;
+      color: $subtitle;
+      font-weight: normal;
+    }
+  }
+
+  &__empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--subtitle {
+      margin-top: 20px;
+      font-size: 14px;
+      text-align: center;
+      color: $title;
+    }
+  }
+
+  &__shop {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+}
+
+.game-item {
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    background-color: $background-card;
+    width: 60px;
+    height: 53px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 42px;
+      width: 41px;
+    }    
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 10px;
+    
+    &--title {
+      font-size: 14px;
+      color: $subtitle;
+    }
+
+    &--price {
+      font-size: 14px;
+      font-weight: bold;
+      color: $price-cart;
+    }
+  }
+
+  &__delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+
+    span {
+      margin-top: -2px;
+    }
+  }
+}
+
+.game-item:hover {
+  .game-item__image,
+  .game-item__info {
+    opacity: 0.5;
+  }
+
+  .game-item__delete {
+    background-color: $delete-item;
+  }
+}
+
+.cart__price {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  
+  &--label {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: $subtitle;
+  }
+
+  &--sub-total {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    color: $price-cart;
+  }
+
+  &--total {
+    @extend .cart__price--sub-total;
+    font-size: 20px;
+  }  
+}

@@ -2,13 +2,17 @@
 
 .games-store {
   display: flex;
+
+  &__cart {
+    flex-basis: 262px;
+  }
 }
 
 .games-list {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  margin-right: 15px;
+  margin-right: 20px;
   flex-direction: column;
 
   &__header {
@@ -40,8 +44,4 @@
   &__cards {
     margin-top: 50px;
   }
-}
-
-.cart {
-  flex-basis: 262px;
 }

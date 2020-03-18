@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { Game } from 'src/app/shared/game.model';
+import { Game } from 'src/app/shared/model/game.model';
+import { CartService } from 'src/app/shared/service/cart.service';
 
 @Component({
   selector: 'app-game-card',
@@ -8,6 +9,12 @@ import { Game } from 'src/app/shared/game.model';
   styleUrls: ['./game-card.component.scss']
 })
 export class GameCardComponent {
+
+  constructor(private cartService: CartService) {}
+
   @Input() public game: Game;
-  public mouseOver = false;
+
+  public addGameToCart() {
+    this.cartService.clickedCardGame.next(this.game);
+  }
 }

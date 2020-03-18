@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { Game } from '../shared/game.model';
+import { Game } from '../shared/model/game.model';
 import { GameListOrder } from '../shared/enum/game-list-order.enum';
 import { UtilArray } from '../shared/util/util-array';
 import games from '../../assets/mocks/products.json';

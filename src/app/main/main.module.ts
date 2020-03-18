@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main.component';
 import { GamesListComponent } from './games-list/games-list.component';
 import { GameCardComponent } from './games-list/game-card/game-card.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
   {
@@ -21,7 +22,8 @@ export const routes: Routes = [
   declarations: [
     MainComponent,
     GameCardComponent,
-    GamesListComponent
+    GamesListComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
